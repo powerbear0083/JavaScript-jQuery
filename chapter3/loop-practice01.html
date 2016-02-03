@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset="UTF-8">
+<title>Loop Practice</title>
+<script type="text/javascript">
+function loopTest() {
+	var num = 1;
+	document.write('<h1>This is While loop Practice </h1>');
+	document.write('<p>');
+	while (num < 10) {
+		document.write('Number' + num + '<br/>');
+		num = num +1;
+	}
+	document.write('<p>');
+
+}
+loopTest();
+
+function arrayTest1() {
+    var days = ['Monday', 'Tuesday', 'Wdndesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+    var counter = 0;
+
+    while (counter < days.length) {
+        document.write(days[counter] + ', ');
+        counter++;
+    }
+}
+arrayTest1();
+
+function loopTest2() {
+	var num = 1;
+	document.write('<h1>This is For loop Practice </h1>');
+	document.write('<p>');
+
+	for(var num = 0; num <= 10; num++){
+		document.write('Number' + num + '<br/>');
+	}
+	document.write('</p>');
+}
+loopTest2();
+
+function arrayTest2() {
+    var days = ['Monday', 'Tuesday', 'Wdndesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+    document.write('<p>');
+    for (var counter = 0; counter < days.length; counter++) {
+        document.write(days[counter] + ', ');
+    }
+    document.write('</p>');
+}
+arrayTest2();
+
+function reverseLoop() {
+	var example = ['first', 'second', 'third', 'last'];
+
+	document.write('<p>');
+	for (var j = example.length - 1; j >=0; j--) {
+		document.write(example[j] + '<br>');
+	}
+	document.write('</p>');
+}
+reverseLoop();
+</script>
+
+</head>
+
+<body>
+
+
+
+</body>
+</html>
