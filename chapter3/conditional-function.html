@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset="UTF-8">
+<title>Function Practice</title>
+<script type="text/javascript">
+
+	function printToday () {
+		var today = new Date();
+
+		document.write(today.toDateString());
+	}
+
+	function printTxt (msgTxt, tag){
+		document.write('<' + tag + '>' + msgTxt + '</' + tag + '>' );
+	}
+	printTxt('Hello world', 'p');
+
+	function taxTest(){
+		var TAX = 0.08;  // 8%稅率
+
+		function calculateTotal(quantity, price){
+			var total = quantity * price * (1 + TAX);
+			var formattedTotal = total.toFixed(2);
+
+			return formattedTotal;  //回傳儲存在 formattedTotal 的值
+		}
+
+		var saleTotal = calculateTotal(2, 16.95);
+
+		//document.write('Total cost is: $' + saleTotal);
+		document.write('<p>' + 'Total cost is: $' + calculateTotal(2, 16.95) + '</p>');
+
+	}
+	taxTest();
+
+	function variableConflict(){
+		var message = 'Outside the function';
+
+		function warning(message){
+			alert(message);
+		}
+
+		warning('Inside the function');  // Inside the function
+		alert(message); //Outside the function
+	}
+	variableConflict();
+
+	function variableConflict2(){
+		var message = 'Outside the function';
+
+		function warning(message){
+			var message = 'Inside the function';
+			alert(message);
+		}
+
+		warning();  // Inside the function
+		alert(message); //Outside the function
+	}
+	variableConflict2();
+
+</script>
+</head>
+
+<body>
+<p>Today is <strong>
+<script type="text/javascript">
+	printToday ();
+</script>
+</strong></p>
+</body>
+</html>
