@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset="UTF-8">
+<title>chapter3 Quiz</title>
+<script type="text/javascript">
+
+	var score = 0;	
+
+	//建立問題與答案巢狀陣列
+	var questions = [
+			['How many moons does Earth have', 1],
+			['How many moons does Saturn have', 31],
+			['How many moons does Venus have', 0]
+		];
+
+	function askQuestions (questions){
+		//存取陣列中第一個元素,就是題目
+		var answer = prompt(questions[0], '');
+
+		//如果取得的值符合陣列的第二個元素
+		if(answer == questions[1]){
+			alert('correct');
+			score++;
+		}else{
+			alert('Sorry. The Correct answer is' + questions[1]);
+		}
+	}
+
+
+	for (var i = 0; i < questions.length; i++){
+
+		//執行問答function
+		askQuestions(questions[i]);
+
+	}
+
+</script>
+<script type="text/javascript">
+	var message = 'You got' + score;
+
+	message += ' Out of ' + questions.length;
+	message += ' questions correct.';
+
+	document.write('<p>' + message + '</p>');
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
