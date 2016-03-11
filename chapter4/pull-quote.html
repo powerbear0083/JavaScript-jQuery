@@ -43,14 +43,37 @@
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function () {
-	$('span.pq').each(function(){
+	/*$('span.pq').each(function(){
 		var quote = $(this).clone();
 
 		quote.removeClass('pq');
 		quote.addClass('pullquote');
 
 		$(this).before(quote);
-	}); // end eachs
+	});*/ // end eachs
+
+
+    // };
+
+    function CloneTxt() {
+        var $spanPq = $('.pq');
+        var quotes = [];
+
+        for (var i = 0; i < $spanPq.length; i++) {
+
+            quotes.push($spanPq.eq(i).text());
+
+            if ($spanPq.eq(i).text() == quotes[i]) {
+
+                $spanPq.eq(i).removeClass('pq');
+                $spanPq.eq(i).addClass('pullquote');
+                $spanPq.eq(i).before(quotes[i]);
+
+            }
+
+        };
+    }
+    CloneTxt();
 }); // end ready
 </script>
 </body>
