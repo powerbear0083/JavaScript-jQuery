@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Introducing Events</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body id="events">
+<div class="wrapper">
+	<header>
+	    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+	</header>
+	<div class="content">
+			<div class="main">
+		<h1>Introducing Events</h1>
+		<p><a id="btn" href="#">A Link</a></p>
+		<p id="btnP">JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+		<p><a id="btnB" href="#">B Link</a></p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	//宣告兩個物件實實字
+	var linkVar = { msg: 'Hello from a link'};
+	var pVar = { msg: 'Hello from a paragraph'};
+
+	//showMsg(e) 裡面的e 會接受事件物件
+	function showMsg(e){
+		//e.data.msg 中的msg 為自訂議屬性，對應物件實字中的msg
+		alert(e.data.msg);
+	}
+
+	$('#btn').on('mouseover', linkVar, showMsg);
+	$('#btnP').on('click', pVar, showMsg);
+
+
+	//運用物件實字整合事件
+	$('#btnB').on({
+		'click' : function(){
+			alert(1);
+		},	
+		'mouseover' : function(){
+			$(this).css('color', 'red');
+		}
+	});
+
+}); // end reday
+</script>
+</body>
+</html>
