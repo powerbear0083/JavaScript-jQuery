@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Easing Example I</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+#animate {
+	width: 200px;
+	height: 200px;
+	background-color: tomato;
+	padding: 20px;
+}
+#animate p {
+	color: black;	
+}
+#message{
+	width: 150px;
+	height: 150px;
+	background-color: #333;
+	margin-top: 20px;
+}
+#message p, #moveIt p{
+	color: #fff;
+}
+#moveIt{
+	width: 150px;
+	height: 150px;
+	background-color: #b8334c;
+	margin-top: 20px;
+	position: relative;
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+<header>
+    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+</header>
+<div class="content">
+    <div class="main">
+        <h1>Easing Example I</h1>
+        <div id="animate">
+            <p>Click on me!</p>
+        </div>
+        <div id="message">
+        	<p>Click on me2!</p>
+        </div>
+        <div id="moveIt">
+        	<p>Click on me2!</p>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+</footer>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#message').animate({
+		left: '650px',
+		opacity: .5,
+		fontSize: '24px'
+	}, 1500);
+
+	$('#moveIt').on('click', function(){
+
+		$(this).animate({
+			left: '+=50px'
+		},1000, 'easeInBounce');
+	});
+
+
+
+	$('#animate').click(function() {
+	  $(this).animate(
+	  {
+		  width: '400px',
+		  height: '400px'
+	  }, 1000,
+	  'easeInBounce'); // end animate
+	}); // end click
+}); // end ready
+</script>
+</body>
+</html>
