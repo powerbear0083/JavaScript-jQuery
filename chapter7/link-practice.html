@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>link practice</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('.main a').each(function(){
+
+		var href = $(this).attr('href'); //取得所有 a 裡面的連結,並存到href
+
+			href = href.replace('https://', ''); // 把https 變成空字串,存到到href
+
+		$(this).after('(' + href + ')'); // 把href 放到 a後面
+
+		//console.log(href);
+
+	});
+
+});
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+  </header>
+
+<div class="content">
+<div class="main">
+	<ul>
+		<li><a href="https://www.google.com.tw/">google</a></li>
+		<li><a href="https://tw.yahoo.com/">yahoo</a></li>
+		<li><a href="https://www.msn.com/zh-tw">msn</a></li>
+	</ul>
+</div>
+<footer>
+    <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
