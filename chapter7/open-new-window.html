@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Open new windows</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+.pullquote {
+	float: right;
+	clear: right;
+	width: 200px;
+	padding: 10px;
+	font-size: 20px;
+	background-color: rgba(255, 211, 224, 0.5);
+	border-radius: 10px;
+	margin: 20px 0 10px 10px;
+	font-style: italic;
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span pclass="amp">&amp;</span>p jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <img id="photo" src="img/blue.jpg" height="300" width="400" alt="blue">
+    </div>
+    <a id="close1" href="#">close1</a> <br><br>
+    <a id="close2" href="#">close2</a> <br><br>
+    <a href="https://www.google.com.tw/" class="popup">popup</a>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    var newWin = open('https://www.google.com.tw/', 'theWin', 'height=200, width=200'); //三個參數分別為網址,新視窗名稱,視窗屬性
+
+    var winProps = 'height=200, width=200, location=yes';
+    var newWin2 = open('https://www.google.com.tw/', 'aWin', winProps);
+
+    $('#close1').on('click', function(){
+        newWin.close();
+    });
+    $('#close2').on('click', function(){
+        newWin2.close();
+    });
+
+    $('.popup').on('click', function(e){
+        e.preventDefault();
+        var winProps = 'height=200, width=200, location=yes, scrollbar=yes';
+        var newWin3 = open($(this).attr('href'), 'aWin', winProps);
+    });
+
+}); // end ready
+</script>
+</body>
+</html>
