@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>clcik event</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+#loginForm{
+	display: none;
+}
+
+</style>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+
+
+	/*$('#showForm').on('click', function(){
+
+		return false;
+
+		$('#loginForm').fadeIn('slow');
+
+
+		return false; //只能放在這裡, 放在上面會直接跳出FN,不會執行 fadeIn的動作
+	});*/
+
+	$('#showForm').on('click', function(e){
+
+		e.preventDefault();  // 放在一開始跟程式最後都沒差, fadeIn 會執行
+
+		$('#loginForm').fadeIn('slow');
+
+
+		
+	});
+
+});
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+  </header>
+
+<div class="content">
+<div class="main">
+	<a href="#" id="showForm">show form</a>
+	<ul id="loginForm">
+		<li><input type="text" name="" id=""></li>
+		<li><input type="text" name="" id=""></li>
+	</ul>
+</div>
+<footer>
+    <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+  </footer>
+</div>
+</body>
+</html>

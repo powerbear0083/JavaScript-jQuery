@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>link practice</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('a[href^="http://"], a[href^="https://"]').attr('target', '_blank');
+
+	var myUrl = location.protocol + '//' + location.hostname;
+
+	$('a[href^="http://"], a[href^="https://"]').not('[href^="' + myUrl + '"]')
+	.attr('target', '_blank');
+
+});
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+  </header>
+
+<div class="content">
+<div class="main">
+	<ul>
+		<li><a href="https://www.google.com.tw/">google</a></li>
+		<li><a href="https://tw.yahoo.com/">yahoo</a></li>
+		<li><a href="https://www.msn.com/zh-tw">msn</a></li>
+		<li><a href="link-practice.html">test</a></li>
+	</ul>
+</div>
+<footer>
+    <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
