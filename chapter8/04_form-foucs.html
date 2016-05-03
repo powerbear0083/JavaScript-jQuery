@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form counts</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+.pullquote {
+	float: right;
+	clear: right;
+	width: 200px;
+	padding: 10px;
+	font-size: 20px;
+	background-color: rgba(255, 211, 224, 0.5);
+	border-radius: 10px;
+	margin: 20px 0 10px 10px;
+	font-style: italic;
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span pclass="amp">&amp;</span>p jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <form id="signup" action="">
+		  <label for="username">數量</label><input type="text" id="username" name="username" value="Please type your user name"> <br><br>
+		  <input type="submit" value="submit">
+		</form>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+
+	$('#username').on('focus', function(){
+		var field = $(this);
+
+		//defaultValue 屬於 js input text 原生 property (屬性)
+		//可以取得網頁戴入時 input 一開始的 property
+
+		if(field.val() == field.prop('defaultValue')){
+			field.val('');
+		}
+
+	});
+
+}); // end ready
+</script>
+</body>
+</html>

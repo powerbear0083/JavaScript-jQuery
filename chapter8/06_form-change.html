@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form counts</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+.pullquote {
+	float: right;
+	clear: right;
+	width: 200px;
+	padding: 10px;
+	font-size: 20px;
+	background-color: rgba(255, 211, 224, 0.5);
+	border-radius: 10px;
+	margin: 20px 0 10px 10px;
+	font-style: italic;
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span pclass="amp">&amp;</span>p jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <form id="signup" action="">
+		  <select name="" id="country">
+		  		<option value="Please choose a country">Please choose a country</option>
+		  		<option value="taiwan">taiwan</option>
+		  </select>
+		</form>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+
+	$('#country').on('change', function(){
+		if($(this).val() == 'Please choose a country'){
+			alert('Please select a country from this menu')
+		}
+	});
+
+}); // end ready
+</script>
+</body>
+</html>
