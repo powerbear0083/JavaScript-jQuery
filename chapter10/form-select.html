@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Make a Reservation</title>
+<link href="../_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../_css/site.css" rel="stylesheet">
+<link href="form.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>One-Way Airlines: Let's make a reservation</h1>
+            <img id="pic" src="img/orange.jpg" alt="orange">
+            <form>
+                <div>
+                    <label for="meal" class="label">Meal Options</label>
+                    <select name="colors" id="colors">
+                        <option value="NoColor">No color</option>
+                        <option value="orange">orange</option>
+                        <option value="purple">purple</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+<script>
+$(document).ready(function() {
+	$('#colors').selectmenu({
+		width: 200,
+		change: function(e, ui){
+			var newImg;
+
+			if(ui.item.label === 'orange'){
+				newImg = 'img/orange.jpg';
+			} else if (ui.item.label === 'purple') {
+				newImg = 'img/purple.jpg';
+			} else {
+				newImg = 'img/orange.jpg';
+			}
+
+			$('#pic').attr('src', newImg);
+
+		}
+	});
+}); // end ready
+</script>
+</body>
+</html>
