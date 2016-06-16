@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World</title>
+<link href="../_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../_css/site.css" rel="stylesheet">
+<link href="interactions.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+<header>
+    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+</header>
+<div class="content">
+    <div class="main">
+        <h1>Draggable Note</h1>
+    </div>
+    <div id="note">
+        <h2>You can drag me</h2>
+        <p>I'm a note on the page.</p>
+    </div>
+    <div id="left"></div>
+    <div id="top"></div>
+</div>
+<footer>
+    <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+</footer>
+
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$('#note').draggable({
+		cursor: 'pointer',
+		handle: 'h2',
+		//axis: 'x', //axis 限制元素左右下上移動
+		cancel: 'p', //cancel 防止特定元素拖動
+		//containment: '.content' // containment 設定可拖動元素在 .content 容器內
+		containment: 'document', // parent, document, window
+		cursorAt: {              // 固定滑鼠游標位置
+			left: 5,
+			top: 5
+		},
+		//grid: [50, 100],
+		// hepler: 'clone'
+		/*hepler: function(event) {
+			//return $("<div class='ui-widget-header'>I'm a custom helper</div>");
+			alert();
+		},*/
+		start: function (event, ui) {
+			ui.helper.css('transform', 'scale(2)');
+		},
+		stop: function (event, ui) {
+			ui.helper.css('transform', 'scale(1)');
+		},
+		drag: function (event, ui) {
+			$('#left').text(ui.position.left);
+			$('#top').text(ui.position.top);
+		}
+
+	});
+  
+}); // end ready
+</script>
+</body>
+</html>
