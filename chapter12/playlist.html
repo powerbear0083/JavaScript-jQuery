@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sortable Playlist</title>
+<link href="../_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../_css/site.css" rel="stylesheet">
+<link href="interactions.css" rel="stylesheet">
+<style>
+.songList span {
+	background-color: #999;
+	float: right;
+    display: inline-block;
+}
+</style>
+</script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>My Musical Playlist</h1>
+            <ul id="playlist" class="songList">
+                <li>My Way -- Frank Sinatra  <span class="del">delete</span></li>
+                <li>Like a Rolling Stone -- Bob Dylan <span class="del">delete</span></li>
+                <li>Respect -- Aretha Franklin <span class="del">delete</span></li>
+            </ul>
+            <h1>Favorites</h1>
+            <ul id="favorites" class="songList">
+                <li>My Way -- Frank Sinatra</li>
+                <li>Like a Rolling Stone -- Bob Dylan</li>
+                <li>Respect -- Aretha Franklin</li>
+                <li>Symphonie #5 -- Beethoven</li>
+                <li>Kentucky Waltz -- Bill Monroe</li>
+                <li>I Saw the Light -- Hank Williams</li>
+                <li>Tosca -- Puccini</li>
+                <li>Adicto a ti -- Shakira</li>
+                <li>¿Dónde están corazón? -- Coti ft. Enrique Iglesias</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   
+	$('#playlist').sortable({
+
+		opacity: 0.5,
+		placeholder: 'ui-state-highlight',
+		axis: 'y', // 限制托動元素上下左右移動  x , y
+        cancel: '.del', //防止拖動,
+        connectWith: '#favorites',   // 需要建立兩個拖動清單才可以使用
+        delay: 100, //要按住滑鼠多長時間才能開始拖動
+        distance: 20 // 防止 原素 、 項目 在點擊時意外拖動，這個範例是指 del 的 scope
+		//cursor: 'pointer',
+		//handle: '#playlist > li'
+
+	});
+
+
+    $('#favorites').sortable({
+
+        connectWith: '#playlist' // 需要建立兩個拖動清單才可以使用
+
+    });
+   
+
+}); // end ready
+</script>
+</body>
+</html>
