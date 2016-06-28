@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World</title>
+<link href="../_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../_css/site.css" rel="stylesheet">
+<link href="interactions.css" rel="stylesheet">
+<style>
+.hightlight{
+  background-color: #555;
+}
+</style>
+</script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Drag and Drop</h1>
+            <div id="draggable" class="draggable">
+                <p>You can drag me</p>
+            </div>
+            <div id="droppable" class="droppable">
+                <p>You can drop things on me</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+  /*$('#draggable').hide('explode', 
+      {
+       pieces: 16 
+      },
+      500, function(){
+        alert('Boom!');
+      }
+  );*/
+
+  /*$('#draggable').hide('blind', 
+      {
+       direction: 'left' 
+      },
+      500, function(){
+        alert('blind!');
+      }
+  );*/
+
+  /*$('#draggable').on('click', function(){
+
+     $(this).effect('bounce',
+        { 
+          direction: 'horizontal',  
+          distance: 100,
+          times: 200
+        });
+
+
+   });*/
+
+
+  /*$('#draggable').on('click', function(){
+
+     $(this).effect('clip',
+        { 
+          direction: 'horizontal',  //只接受  vertical 或  horizontal
+        });
+
+     
+   });*/
+
+
+  /*$('#draggable').on('click', function(){
+
+     $(this).effect('fold',{
+
+        size: '50%',
+        horizFirst: true
+
+     });
+       
+
+     
+   });*/
+
+  /*$('#draggable').effect('pulsate',{
+
+    times: 20
+
+  },2000);*/
+
+  /*$('#draggable').effect('shake',{
+
+    direction: 'left',
+    distance: 50,
+    time: 10
+
+  },2000);*/
+
+  $('#draggable').on('click', function(){
+
+    $(this).effect('bounce', {
+
+        distance: 100,
+        times: 20,
+        easing: 'easeOutBounce'
+
+    })
+
+  });
+  
+
+}); // end ready
+</script>
+</body>
+</html>
