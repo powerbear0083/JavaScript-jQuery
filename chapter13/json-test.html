@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+form {
+	padding: 10px 10px 10px 10px;
+}
+label {
+	display: inline-block;
+	width: 100px;
+	text-align:right;
+	margin: 0 15px 0 0;
+	color: white;
+}
+input {
+	font-size: 14px;
+}
+#button {
+	margin-left: 115px;
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Login</h1>
+            <div id="formwrapper">
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function() {
+			 
+    var bdate = {
+
+        "person" : "Raoul",
+        "date" : "10/27/1980"
+
+    }
+
+    //dot 語法 or 陣列記號
+    //取得物件中 person 的值
+    //console.log(bdate.person, bdate.date);
+
+    var date = {
+
+        "firstName" : "Frank",
+        "lastName" : "Smith",
+        "phone" : "503-555-1212"
+
+    }
+
+    //取得物件中的值
+    //console.log(date.firstName, date.lastName);
+
+    //伺服器取資料
+    //$.getJson('contacts.php', 'contact=123', processContacts);
+
+    //基本接值練習
+    var processContacts = function(data) {
+
+        var infoHTML = '<p>Contact: ' + date.firstName;
+
+            infoHTML += ' ' + date.lastName + '<br>';
+            infoHTML +='Phone: ' + date.phone + '</p>';
+
+
+        $('#formwrapper').html(infoHTML);    
+
+    }
+    //processContacts();
+
+
+
+    var date2 = {
+
+        "contact1": {
+            "firstName": "Frank",
+            "lastName": "Smith",
+            "phone": "503-555-1212"
+        },
+        "contact2": {
+
+            "firstName": "Peggy",
+            "lastName": "Jones",
+            "phone": "415-555-5235"
+        }
+
+    }
+
+    //console.log(date2.contact1.firstName, date2.contact2.lastName);
+    //伺服器取資料
+    //$.getJson('contacts.php', 'limit=2', processContacts);
+
+
+    //基本接值練習
+    var processContacts2 = function(data) {
+
+            var infoHTML = ''
+
+                
+            $.each(date2, function(contact, contactInfo){
+
+                infoHTML += '<p>Contact:' + contactInfo.firstName;
+                infoHTML += ' ' + contactInfo.lastName + '<br>';
+                infoHTML += 'Phone: ' + contactInfo.phone + '</p>';
+
+            });
+
+            $('#formwrapper').html(infoHTML);
+
+
+    }   
+    processContacts2();
+
+}); // end ready
+</script>
+</body>
+</html>
