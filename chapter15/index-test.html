@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My To-Do List</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <div id="elemForTooltip"></div>
+            
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(function () {
+
+    //bad example
+    /*$('#elemForTooltip').append('<div id="tooltip"></div>');
+    $('#tooltip').append('<h2>The tooltip title</h2>');
+    $('#tooltip').append('<p>The tooltip contents hyere</p>');*/
+
+    //good example
+    var tooltip = '<div id="tooltip"><h2>The tooltip title</h2><p>The tooltip contents hyere</p></div>';
+
+    $('#elemForTooltip').append(tooltip);
+
+
+});
+</script>
+</body>
+</html>
