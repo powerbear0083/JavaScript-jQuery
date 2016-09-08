@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Fun</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Fun With Forms</h1>
+            <form action="" method="post" name="order" id="order">
+                <fieldset>
+                    <legend>Shipping Information</legend>
+                    <div id="shipping">
+                        <div>
+                            <label for="password" class="label">Password</label>
+                            <input name="password" type="password" id="password" size="36">
+                        </div>
+                        <input type="submit" value="submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function() {
+  
+	var verifyPassword = function(){
+
+		var password = $('#password').val();
+
+		if(password.length <= 6) {
+
+			alert('That password is too short');
+
+		} else if(password.length > 15) {
+
+			alert('That password is too long.');
+		}
+
+	} 
+
+	//送出時驗證表單
+
+	$('#order').on('submit', function(e){
+		e.preventDefault();
+		verifyPassword();
+
+	});
+
+	//離開password fields 時，驗證表單
+
+	$('#password').on('blur', function(){
+
+		verifyPassword();
+
+	});
+
+}); // end ready
+</script>
+</body>
+</html>

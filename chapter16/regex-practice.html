@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>regex partice</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Fun With Forms</h1>
+            <form action="" method="post" name="order" id="order">
+                <fieldset>
+                    <legend>Shipping Information</legend>
+                    <div id="shipping">
+                        <div>
+                            <label for="password" class="label">Password</label>
+                            <input name="password" type="password" id="password" size="36">
+                        </div>
+                        <input type="submit" value="submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function() {
+  
+
+    //redex method
+
+    //find To be
+
+    var myRegEx = /To be/; // / 表示開頭  / 表示結尾
+
+    var quote = 'To be or not to be.';
+
+    var foundPosition = quote.search(myRegEx); // 回傳0
+                                               // search method 回傳 -1 表示沒有找到相符字元
+
+    //console.log(foundPosition);
+
+    //find 5 number
+    var zip;
+    var zipTest = /d{5}/; // 找出五個數字
+
+    /*if(zip.search(zipTest) === -1){
+
+        alert('This is not a valid zip code');
+    }*/
+
+    //console.log(zipTest);
+
+    //find .gif
+    var testString = 'The file is logo.gif create by ales.gifford@example.com';
+
+    var gifRegx = /\S+\.gif\b/i; // \S找出沒有空格的字元、 \.gif找出所有.gif、
+                                 // \b文字邊界、閉免找出.gifford@example這種字串、 i 讓正規式忽略大小寫 
+
+    var results = testString.match(gifRegx);
+
+    var file = results[0];
+
+    //console.log(results, file);
+
+    //find mail
+
+    var mailRegx = /[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}/;
+
+    var mailRegx2 = /^[\w!#$%&\'*+\/=?^`{|}~.-]+@(?:[a-z\d-]*(?:\.[a-z\d][a-z\d-]*)?)+\.(?:[a-z\d-]+)$/i;
+
+    //find date for us
+
+    var dateRegx = /([01]?\d)[-\/ .]([0123]?\d)[-\/ .](\d{4})/;
+
+    //console.log(dateRegx);
+
+    //find url
+
+    var urlRegx = /^((https?:\/\/)|(www\.))\S*$/; //檢查是否帶有完整URL
+
+    //console.log(urlRegx);
+
+    //Testing whether URL in string
+
+    var text = 'my website is www.missingmanuals.com';
+    var urlRegx2 =  /((\bhttps?:\/\/)|(\bwww\.))\S*/;
+    var url = text.match(urlRegx2);
+
+    //console.log(url, url[0]);
+
+    var stringTobe = 'To be or not';
+    var tobeRegex = /be/;
+    var tobeResult = stringTobe.match(tobeRegex);
+
+    //console.log(tobeResult.index, tobeResult[0]);
+
+
+    //find every matches Text 
+
+    var textString = 'there are a lot of great websites like www.missingmanuals.com and http://ww.oreilly.com';
+    var urlString = /((\bhttps?:\/\/)|(\bwww\.))\S*/g; // 建構全域搜尋正規表達式
+
+    var urlFind = textString.match(urlString);
+
+    //console.log(urlFind[0], urlFind[1]);
+
+
+    //replace text
+
+    var date = '10.28.2014';
+    var replaceRegex = /\./g ;
+    var date = date.replace(replaceRegex, '/');
+    //console.log(date);
+
+    //replace text advance example
+
+    var date2 = '10.28.2014';
+    var commonRegex = /([01]?\d)[-\/ .]([0123]?\d)[-\/ .](\d{4})/;
+    var date2 = date2.replace(commonRegex, '$1/$2/$3');
+
+    console.log(date2);
+
+}); // end ready
+</script>
+</body>
+</html>

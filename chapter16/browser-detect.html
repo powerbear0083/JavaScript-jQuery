@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Fun</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Fun With Forms</h1>
+            <form action="" method="post" name="order" id="order">
+                <fieldset>
+                    <legend>Shipping Information</legend>
+                    <div id="shipping">
+                        <div>
+                            <label for="password" class="label">Password</label>
+                            <input name="password" type="password" id="password" size="36">
+                        </div>
+                        <input type="submit" value="submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function() {
+  
+
+    //indexOf method
+
+	//console.log(navigator.userAgent);
+
+    var browserDetect = navigator.userAgent;
+
+    //console.log(browserDetect.indexOf('MSIE'));
+
+    if( browserDetect.indexOf('MSIE') != -1 ){
+
+        alert('this is ie browser');
+    } 
+
+    var quote = 'To be, or not to be.';
+    var searchPosition = quote.indexOf('To be');
+    var firstPosition = quote.indexOf('be');
+    var lastPosition = quote.lastIndexOf('be');
+
+    //console.log(searchPosition, firstPosition, lastPosition); // 0, 3,  17
+
+    //slice method
+    //string.slice(start, end)
+    //start 指定要擷取的字串的第一個字元位置
+    //end 最後一個字母的位置+1
+
+    var url = 'http://www.sawmac.com';
+    var domain = url.slice(7);
+
+    //console.log(domain); // www.sawmac.com
+
+    console.log(quote.slice(0, 5), quote.slice(-6, -1)) //To be, to be
+
+
+}); // end ready
+</script>
+</body>
+</html>

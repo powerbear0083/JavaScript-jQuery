@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>number partice</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Fun With Forms</h1>
+            <form action="" method="post" name="order" id="order">
+                <fieldset>
+                    <legend>Shipping Information</legend>
+                    <div id="shipping">
+                        <div>
+                            <label for="password" class="label">Password</label>
+                            <input name="password" type="password" id="password" size="36">
+                        </div>
+                        <input type="submit" value="submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    // Number Function
+	var a = '3';
+        a = Number(a);
+
+    //console.log(a);
+
+    var b = '3';
+    var c = '4';
+    var total = Number(b) + Number(c);
+
+    //console.log(total);
+
+    var d = '5';
+    var e = '4';
+    var total = +d + +e;
+    //console.log(total);
+
+    //parseInt Function
+
+    /*var age = '20 years';
+        age = parseInt(age);
+
+    console.log(age);*/
+
+    //designate usage decimal
+    var age = '020 years';
+        age = parseInt(age, 10);
+
+    //console.log(age);
+
+    //parseFloat Function
+
+    var space = '4.5 acres';
+        space = parseFloat(space);
+
+    //console.log(space);
+
+    //isNaN Function
+    var x = '10';
+
+    if( isNaN(x) ){
+
+        //console.log('string');
+
+    } else {
+
+        //console.log('number');
+
+    }
+
+    //rounding Function
+
+    //四捨五入
+    var decimalNum = 10.25;
+    var roundedNum = Math.round(decimalNum);
+
+    //console.log(roundedNum);
+
+    //無條件進位
+    var decimalNum2 = 4.00001;
+    var ceilNum = Math.ceil(decimalNum2);
+
+    //console.log(ceilNum);
+
+    //無條件捨去
+    var decimalNum3 = 8.9999;
+    var floorNum = Math.floor(decimalNum3);
+
+    //console.log(floorNum);
+
+
+
+    //toFixed function
+    //toFixed only uasge for number
+
+    var cost = 10;
+    var printCost = '$' + cost.toFixed(2);
+
+    console.log(printCost);
+
+
+    var cost2 = 10.2895;
+    var printCost2 = '$' + cost2.toFixed(2);
+
+    console.log(printCost2);
+
+    //string transform number, usage toFixed
+
+    var costString = '20.78899';
+        //costString = +costString;
+        costString = Number(costString);
+
+    var printCost3 = '$' + costString.toFixed(2);
+    
+
+    console.log(printCost3);
+
+}); // end ready
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>math partice</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Fun With Forms</h1>
+            <form action="" method="post" name="order" id="order">
+                <fieldset>
+                    <legend>Shipping Information</legend>
+                    <div id="shipping">
+                        <div>
+                            <label for="password" class="label">Password</label>
+                            <input name="password" type="password" id="password" size="36">
+                        </div>
+                        <input type="submit" value="submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    // math random
+
+    var random10 = Math.floor(Math.random()*10)
+
+   //console.log(random10);
+
+   var roll = Math.ceil(Math.random()*6);
+
+   //console.log(roll);
+
+   var people = ['Ron', 'Sally', 'Tricia', 'Bob'];
+   var random = Math.floor(Math.random() * people.length);
+   var rndPerson = people[random];
+
+   //console.log(random, people[random], rndPerson);
+
+   //random function
+   function randomNum( from, to ){
+
+        return Math.floor((Math.random() * (to - from + 1)) + from);
+        //return Math.floor((Math.random() * (to - from)));
+
+   }
+
+   var dieRoll = randomNum(100,1000);
+
+   console.log(dieRoll);
+
+}); // end ready
+</script>
+</body>
+</html>
