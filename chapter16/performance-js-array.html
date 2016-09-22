@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>performance-js-array</title>
+<link href="../_css/site.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Fun With Forms</h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum natus sit qui velit minus eius aut molestiae neque blanditiis quas odit distinctio ad unde, tempore ab inventore explicabo in atque!</p>
+            <table style="background-color: rgb(215,215,215); border-collapse: separate; border-spacing: 5px">
+                <tr style="background-color: #f5f5f5">
+                    <td style="padding: 5px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta porro quos officia, aliquid tempora qui voluptate, iure veritatis ex eius est soluta voluptatibus doloribus rem ea alias quas. Reiciendis, molestiae!</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi vel unde vitae ex veritatis alias voluptas est officiis molestiae! Veritatis non ullam inventore magni eaque. Velit inventore sed aut animi.</td>
+                </tr>
+                <tr style="background-color: #f5f5f5">
+                    <td style="padding: 5px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda doloribus ducimus quas. Tempore nobis, similique unde. Ab placeat magni necessitatibus porro, non magnam maxime sunt similique, architecto reiciendis adipisci sequi?</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    //array join method
+
+    var days = [ 'Monday',
+                 'Tuesday',
+                 'Wednesday',
+                 'Thursday',
+                 'Friday',
+                 'Saturday',
+                 'Sunday'
+                ];
+
+    
+    //var weekdays = days.join();
+    //var weekdays = days.join(':');
+    var weekdays = days.join(', ');
+
+    //console.log(weekdays);
+
+    var weekdays2 = 'Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday';
+
+    var dayList = weekdays2.split(',');
+
+    console.log(dayList);
+
+}); // end ready
+</script>
+</body>
+</html>
